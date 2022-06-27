@@ -3,16 +3,16 @@ import './App.css'
 import axios from 'axios';
 import { nsfwOptions, sfwOptions } from './services/data';
 import logo from './assets/02.png';
-import * as Icon from 'react-icons/md';
-import * as IconAi from 'react-icons/ai'
+import * as Icon from 'react-icons/fa';
+import * as IconAi from 'react-icons/ai';
 
 
 function App() {
-  const [type, setType] = useState('')
+  const [type, setType] = useState('');
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState('');
   const [link, setLink] = useState('');
-  const [selectedType, setSelectedType] = useState(false)
+  const [selectedType, setSelectedType] = useState(false);
   const [amount, setAmount] = useState(1);
   const [theme, setTheme] = useState(false);
 
@@ -26,9 +26,8 @@ function App() {
 
   function getResponse() {
     setLoading(false);
-    console.log(type, category)
     if (type.length < 1 || category.length < 1) {
-      return alert('Selecione todos os campos')
+      return alert('Selecione todos os campos');
     }
 
     if (type == "nsfw") {
@@ -40,13 +39,11 @@ function App() {
 
     if (amount > 1) {
       axios.post('https://api.waifu.pics/many/' + type + "/" + category, { type, category }).then((response) => {
-        console.log(response);
         setLink(response.data.files);
         setLoading(true);
       })
     } else {
       axios.get('https://api.waifu.pics/' + type + "/" + category, { type, category }).then((response) => {
-        console.log(response);
         setLink(response.data.url);
         setLoading(true);
       })
@@ -54,11 +51,10 @@ function App() {
   }
 
   function handleChange(e) {
-    console.log("🚀 ~ e.target.value", e.target.value)
-    setType(e.target.value)
+    setType(e.target.value);
     if (e.target.value == "nsfw") {
 
-      setSelectedType(nsfwOptions)
+      setSelectedType(nsfwOptions);
     }
 
     if (e.target.value == "sfw") {
@@ -74,7 +70,6 @@ function App() {
     if (!theme) {
       document.documentElement.style.setProperty('--background-color', '#121212');
     }
-    console.log(theme);
     setTheme((tema) => !tema);
   }
 
@@ -85,7 +80,7 @@ function App() {
           <ul>
             <a href='https://twitter.com/AstraSlade' target='_blank'><li><IconAi.AiFillTwitterCircle /></li></a>
             <a href='https://github.com/renatoastra' target='_blank'><li><IconAi.AiFillGithub /></li></a>
-            <li onClick={changeTheme}> {theme ? <Icon.MdOutlineNightlight className='icon' /> : <Icon.MdNightlight className='icon' />}  </li>
+            <li onClick={changeTheme}> {theme ? <Icon.FaLightbulb className='icon' /> : <Icon.FaRegLightbulb className='icon' />}  </li>
           </ul>
         </nav>
         <header>
