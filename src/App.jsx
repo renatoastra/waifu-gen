@@ -3,8 +3,8 @@ import './App.css'
 import axios from 'axios';
 import { nsfwOptions, sfwOptions } from './services/data';
 import logo from './assets/02.png';
-import * as IconFa from 'react-icons/fa';
-import * as IconAi from 'react-icons/ai';
+import { FaRegLightbulb, FaLightbulb } from 'react-icons/fa';
+import { AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai';
 
 
 function App() {
@@ -78,9 +78,9 @@ function App() {
       <div className={theme ? 'wrapper night' : 'wrapper light'}>
         <nav>
           <ul>
-            <a href='https://twitter.com/AstraSlade' target='_blank'><li><IconAi.AiFillTwitterCircle /></li></a>
-            <a href='https://github.com/renatoastra' target='_blank'><li><IconAi.AiFillGithub /></li></a>
-            <li onClick={changeTheme}> {theme ? <IconFa.FaLightbulb className='icon' /> : <IconFa.FaRegLightbulb className='icon' />}  </li>
+            <a href='https://twitter.com/AstraSlade' target='_blank'><li><AiFillTwitterCircle /></li></a>
+            <a href='https://github.com/renatoastra' target='_blank'><li><AiFillGithub /></li></a>
+            <li onClick={changeTheme}> {theme ? <FaLightbulb className='icon' /> : <FaRegLightbulb className='icon' />}  </li>
           </ul>
         </nav>
         <header>
