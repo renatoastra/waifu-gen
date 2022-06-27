@@ -3,7 +3,7 @@ import './App.css'
 import axios from 'axios';
 import { nsfwOptions, sfwOptions } from './services/data';
 import logo from './assets/02.png';
-import * as Icon from 'react-icons/fa';
+import * as IconFa from 'react-icons/fa';
 import * as IconAi from 'react-icons/ai';
 
 
@@ -80,7 +80,7 @@ function App() {
           <ul>
             <a href='https://twitter.com/AstraSlade' target='_blank'><li><IconAi.AiFillTwitterCircle /></li></a>
             <a href='https://github.com/renatoastra' target='_blank'><li><IconAi.AiFillGithub /></li></a>
-            <li onClick={changeTheme}> {theme ? <Icon.FaLightbulb className='icon' /> : <Icon.FaRegLightbulb className='icon' />}  </li>
+            <li onClick={changeTheme}> {theme ? <IconFa.FaLightbulb className='icon' /> : <IconFa.FaRegLightbulb className='icon' />}  </li>
           </ul>
         </nav>
         <header>
