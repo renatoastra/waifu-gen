@@ -3,8 +3,7 @@ import './App.css'
 import axios from 'axios';
 import { nsfwOptions, sfwOptions } from './services/data';
 import logo from './assets/02.png';
-import { FaRegLightbulb, FaLightbulb } from 'react-icons/fa';
-import { AiFillTwitterCircle, AiFillGithub } from 'react-icons/ai';
+import { AiFillTwitterCircle, AiFillGithub, AiTwotoneBulb, AiOutlineBulb } from 'react-icons/ai';
 
 
 function App() {
@@ -80,7 +79,7 @@ function App() {
           <ul>
             <a href='https://twitter.com/AstraSlade' target='_blank'><li><AiFillTwitterCircle /></li></a>
             <a href='https://github.com/renatoastra' target='_blank'><li><AiFillGithub /></li></a>
-            <li onClick={changeTheme}> {theme ? <FaLightbulb className='icon' /> : <FaRegLightbulb className='icon' />}  </li>
+            <li onClick={changeTheme}> {theme ? <AiOutlineBulb className='icon' /> : <AiTwotoneBulb className='icon' />}  </li>
           </ul>
         </nav>
         <header>
